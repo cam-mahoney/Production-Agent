@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+crewai
+google-ortools
+pydantic
+python-dotenv
+langchain-google-genai  # For Gemini integration
