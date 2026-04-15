@@ -1,0 +1,34 @@
+# --- Compiled Objects and Executables ---
+*.o
+*.obj
+*.exe
+*.out
+*.app
+
+# --- Static and Dynamic Libraries ---
+*.lib
+*.a
+*.dll
+*.so
+*.dylib
+
+# --- Build Directories ---
+[Bb]uild/
+bin/
+obj/
+out/
+cmake-build-debug/
+cmake-build-release/
+
+# --- IDE and Editor Specifics ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.vs/
+*.user
+*.suo
+
+# --- External Dependencies ---
+vcpkg_installed/
+conan/
