@@ -1,11 +1,77 @@
-# Production-Agent
+# FilmTech: Production Office Automation (C++)
 
-FilmTech: The Agentic Production Office
-A Multi-Agent System (MAS) designed to automate the logistical heavy lifting of independent filmmaking. This project bridges the gap between Software Engineering and Film Production by combining LLM-powered script analysis with industrial-grade constraint solving.
+FilmTech is a C++ command-line application for organizing production logistics:
+scenes, locations, and dialogue into a structured plan. The design favors
+offline operation, deterministic behavior, and minimal dependencies.
 
-Core Functionality
-Agentic Script Breakdown: A team of CrewAI agents (Coordinator, Scout, and Accountant) parses screenplays to extract props, cast requirements, and equipment lists.
+## Current Capabilities
 
-Logistics Engine: Utilizes Google OR-Tools (CP-SAT) to solve complex scheduling puzzles, optimizing for minimal "Company Moves" while respecting actor availability and 12-hour turnarounds.
+* Core production data model: `Scene`, `Location`, `Line`, `Role`
+* In-memory plan construction (sample data)
+* Console output: scene -> location -> time -> lines
 
-Production Suite: Automated generation of daily call sheets and "Crafty" logic that cross-references crew dietary restrictions with budget constraints.
+## Planned Capabilities
+
+* Parse structured inputs (text and/or FDX)
+* Scheduling and validation
+* Optional constraint-based scheduling
+* Call sheet/report generation
+
+## Requirements
+
+* Apple clang 15+
+* CMake 3.24+
+* Ninja 1.11+
+
+Verify:
+
+```bash
+clang++ --version
+cmake --version
+ninja --version
+```
+
+## Build
+
+From repo root:
+
+```bash
+cmake --preset dev
+cmake --build --preset dev
+```
+
+## Run
+
+```bash
+./build/dev/filmtech
+```
+
+## VS Code (Optional)
+
+Recommended extensions:
+
+* C/C++ (Microsoft)
+* CMake Tools
+* CMake
+
+If the repo includes `.vscode/` configuration, open the folder in VS Code and
+use CMake Tools to configure/build with the `dev` preset.
+
+## Repo Layout
+
+```text
+.
+├── CMakeLists.txt
+├── CMakePresets.json
+├── src/
+│   └── main.cpp
+├── include/
+├── tests/
+├── .vscode/
+└── build/        (generated; do not commit)
+```
+
+## Notes
+
+* `build/` is generated output and should not be committed.
+* Source lives in `src/`; headers live in `include/`.
