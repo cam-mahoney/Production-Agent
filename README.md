@@ -1,4 +1,4 @@
-# FilmTech: Production Office Automation (C++)
+# FilmTech: Production Office Automation
 
 FilmTech is a C++ command-line application for organizing production logistics:
 scenes, locations, and dialogue into a structured plan. The design favors
